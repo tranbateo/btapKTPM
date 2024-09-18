@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neighborhood Management Dashboard</title>
+    <title>Bảng Quản Lý Khu Phố</title>
     <style>
         * {
             margin: 0;
@@ -115,11 +115,11 @@
         <!-- Top Menu -->
         <nav class="top-menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Residents</a></li>
-                <li><a href="#">Security Events</a></li>
-                <li><a href="#">Tasks</a></li>
-                <li><a href="#">Notifications</a></li>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Cư Dân</a></li>
+                <li><a href="#">Sự Kiện An Ninh</a></li>
+                <li><a href="#">Nhiệm Vụ</a></li>
+                <li><a href="#">Thông Báo</a></li>
             </ul>
         </nav>
 
@@ -128,29 +128,29 @@
             <!-- Overview Section -->
             <div class="overview">
                 <div class="card">
-                    <h3>Total Households</h3>
+                    <h3>Tổng Số Hộ Gia Đình</h3>
                     <p id="total-households">120</p>
                 </div>
                 <div class="card">
-                    <h3>Security Incidents This Month</h3>
+                    <h3>Sự Cố An Ninh Tháng Này</h3>
                     <p id="security-incidents">5</p>
                 </div>
                 <div class="card">
-                    <h3>Pending Tasks</h3>
+                    <h3>Nhiệm Vụ Chờ Xử Lý</h3>
                     <p id="pending-tasks">8</p>
                 </div>
             </div>
 
             <!-- Recent Security Events -->
             <div class="events-section">
-                <h2>Recent Security Events</h2>
+                <h2>Sự Kiện An Ninh Gần Đây</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Event</th>
-                            <th>Date</th>
-                            <th>Severity</th>
-                            <th>Status</th>
+                            <th>Sự Kiện</th>
+                            <th>Ngày</th>
+                            <th>Mức Độ</th>
+                            <th>Trạng Thái</th>
                         </tr>
                     </thead>
                     <tbody id="event-list">
@@ -162,18 +162,18 @@
 
         <!-- Sidebar -->
         <div class="sidebar">
-            <button class="quick-action" onclick="addResident()">Add Resident</button>
-            <button class="quick-action" onclick="reportIncident()">Report Incident</button>
-            <button class="quick-action" onclick="sendNotification()">Send Notification</button>
+            <button class="quick-action" onclick="addResident()">Thêm Cư Dân</button>
+            <button class="quick-action" onclick="reportIncident()">Báo Cáo Sự Cố</button>
+            <button class="quick-action" onclick="sendNotification()">Gửi Thông Báo</button>
         </div>
     </div>
 
     <script>
         // Sample data for recent events
         const events = [
-            { event: "Burglary", date: "2024-09-15", severity: "High", status: "Investigating" },
-            { event: "Vandalism", date: "2024-09-10", severity: "Medium", status: "Resolved" },
-            { event: "Suspicious Activity", date: "2024-09-08", severity: "Low", status: "Under Review" },
+            { event: "Trộm Cắp", date: "2024-09-15", severity: "Cao", status: "Đang Điều Tra" },
+            { event: "Phá Hoại", date: "2024-09-10", severity: "Trung Bình", status: "Đã Giải Quyết" },
+            { event: "Hoạt Động Đáng Ngờ", date: "2024-09-08", severity: "Thấp", status: "Đang Xem Xét" },
         ];
 
         // Function to populate the event list
@@ -196,17 +196,18 @@
 
         // Quick action button functions (placeholders for now)
         function addResident() {
-            alert("Add Resident functionality to be implemented.");
+            alert("Chức năng Thêm Cư Dân sẽ được triển khai.");
         }
 
         function reportIncident() {
-            alert("Report Incident functionality to be implemented.");
+            alert("Chức năng Báo Cáo Sự Cố sẽ được triển khai.");
         }
 
         function sendNotification() {
-            alert("Send Notification functionality to be implemented.");
+            alert("Chức năng Gửi Thông Báo sẽ được triển khai.");
         }
     </script>
 </body>
 </html>
+
 
