@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Management Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            grid-template-rows: auto 1fr;
+            grid-template-areas:
+                "menu menu"
+                "content sidebar";
+            height: 100vh;
+            gap: 20px;
+        }
+
+        .top-menu {
+            grid-area: menu;
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+        .top-menu ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+        }
+
+        .top-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main-content {
+            grid-area: content;
+            padding: 20px;
+        }
+
+        .overview {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .events-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #007bff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .quick-action {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quick-action:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Menu -->
+        <nav class="top-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Residents</a></li>
+                <li><a href="#">Security Events</a></li>
+                <li><a href="#">Tasks</a></li>
+                <li><a href="#">Notifications</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Overview Section -->
+            <div class="overview">
+                <div class="card">
+                    <h3>Total Households</h3>
+                    <p id="total-households">120</p>
+                </div>
+                <div class="card">
+                    <h3>Security Incidents This Month</h3>
+                    <p id="security-incidents">5</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Tasks</h3>
+                    <p id="pending-tasks">8</p>
+                </div>
+            </div>
+
+            <!-- Recent Security Events -->
+            <div class="events-section">
+                <h2>Recent Security Events</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                            <th>Severity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="event-list">
+                        <!-- Event rows will be populated here by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button class="quick-action" onclick="addResident()">Add Resident</button>
+            <button class="quick-action" onclick="reportIncident()">Report Incident</button>
+            <button class="quick-action" onclick="sendNotification()">Send Notification</button>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for recent events
+        const events = [
+            { event: "Burglary", date: "2024-09-15", severity: "High", status: "Investigating" },
+            { event: "Vandalism", date: "2024-09-10", severity: "Medium", status: "Resolved" },
+            { event: "Suspicious Activity", date: "2024-09-08", severity: "Low", status: "Under Review" },
+        ];
+
+        // Function to populate the event list
+        function populateEvents() {
+            const eventList = document.getElementById('event-list');
+            events.forEach(event => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${event.event}</td>
+                    <td>${event.date}</td>
+                    <td>${event.severity}</td>
+                    <td>${event.status}</td>
+                `;
+                eventList.appendChild(row);
+            });
+        }
+
+        // Call the function to populate the event list on page load
+        populateEvents();
+
+        // Quick action button functions (placeholders for now)
+        function addResident() {
+            alert("Add Resident functionality to be implemented.");
+        }
+
+        function reportIncident() {
+            alert("Report Incident functionality to be implemented.");
+        }
+
+        function sendNotification() {
+            alert("Send Notification functionality to be implemented.");
+        }
+    </script>
+</body>
+</html>
+
