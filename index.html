@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Quản Lý Khu Phố</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            grid-template-rows: auto 1fr;
+            grid-template-areas:
+                "menu menu"
+                "content sidebar";
+            height: 100vh;
+            gap: 20px;
+        }
+
+        .top-menu {
+            grid-area: menu;
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+        .top-menu ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+        }
+
+        .top-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main-content {
+            grid-area: content;
+            padding: 20px;
+        }
+
+        .overview {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .events-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #007bff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .quick-action {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quick-action:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Menu -->
+        <nav class="top-menu">
+            <ul>
+                <li><a href="homepage.html">Trang Chủ</a></li>
+                <li><a href="cudan.html">Cư Dân</a></li>
+                <li><a href="sukien.html">Sự Kiện An Ninh</a></li>
+                <li><a href="nhiemvu.html">Nhiệm Vụ</a></li>
+                <li><a href="thongbao.html">Thông Báo</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Overview Section -->
+            <div class="overview">
+                <div class="card">
+                    <h3>Tổng Số Hộ Gia Đình</h3>
+                    <p id="total-households">120</p>
+                </div>
+                <div class="card">
+                    <h3>Sự Cố An Ninh Tháng Này</h3>
+                    <p id="security-incidents">5</p>
+                </div>
+                <div class="card">
+                    <h3>Nhiệm Vụ Chờ Xử Lý</h3>
+                    <p id="pending-tasks">8</p>
+                </div>
+            </div>
+
+            <!-- Recent Security Events -->
+            <div class="events-section">
+                <h2>Sự Kiện An Ninh Gần Đây</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sự Kiện</th>
+                            <th>Ngày</th>
+                            <th>Mức Độ</th>
+                            <th>Trạng Thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="event-list">
+                        <!-- Event rows will be populated here by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button class="quick-action" onclick="addResident()">Thêm Cư Dân</button>
+            <button class="quick-action" onclick="reportIncident()">Báo Cáo Sự Cố</button>
+            <button class="quick-action" onclick="sendNotification()">Gửi Thông Báo</button>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for recent events
+        const events = [
+            { event: "Trộm Cắp", date: "2024-09-15", severity: "Cao", status: "Đang Điều Tra" },
+            { event: "Phá Hoại", date: "2024-09-10", severity: "Trung Bình", status: "Đã Giải Quyết" },
+            { event: "Hoạt Động Đáng Ngờ", date: "2024-09-08", severity: "Thấp", status: "Đang Xem Xét" },
+        ];
+
+        // Function to populate the event list
+        function populateEvents() {
+            const eventList = document.getElementById('event-list');
+            events.forEach(event => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${event.event}</td>
+                    <td>${event.date}</td>
+                    <td>${event.severity}</td>
+                    <td>${event.status}</td>
+                `;
+                eventList.appendChild(row);
+            });
+        }
+
+        // Call the function to populate the event list on page load
+        populateEvents();
+
+        // Quick action button functions (placeholders for now)
+        function addResident() {
+            alert("Chức năng Thêm Cư Dân sẽ được triển khai.");
+        }
+
+        function reportIncident() {
+            alert("Chức năng Báo Cáo Sự Cố sẽ được triển khai.");
+        }
+
+        function sendNotification() {
+            alert("Chức năng Gửi Thông Báo sẽ được triển khai.");
+        }
+    </script>
+</body>
+</html>
+
+
