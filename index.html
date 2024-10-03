@@ -12,10 +12,10 @@
         <nav class="top-menu">
             <ul>
                 <li><a href="homepage.html">Trang Chủ</a></li>
-                <li><a href="cudan.html">Cư Dân</a></li>
-                <li><a href="sukien.html">Sự Kiện An Ninh</a></li>
-                <li><a href="nhiemvu.html">Nhiệm Vụ</a></li>
+                <li><a href="nhanvien.html">Nhân Viên</a></li>
+                <li><a href="thietbi.html">Thiết Bị</a></li>
                 <li><a href="thongbao.html">Thông Báo</a></li>
+                <li><a href="index.html">Nâng Cao</a></li>
             </ul>
         </nav>
 
@@ -64,45 +64,7 @@
         </div>
     </div>
 
-    <script>
-        // Sample data for recent events
-        const events = [
-            { event: "Trộm Cắp", date: "2024-09-15", severity: "Cao", status: "Đang Điều Tra" },
-            { event: "Phá Hoại", date: "2024-09-10", severity: "Trung Bình", status: "Đã Giải Quyết" },
-            { event: "Hoạt Động Đáng Ngờ", date: "2024-09-08", severity: "Thấp", status: "Đang Xem Xét" },
-        ];
-
-        // Function to populate the event list
-        function populateEvents() {
-            const eventList = document.getElementById('event-list');
-            events.forEach(event => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${event.event}</td>
-                    <td>${event.date}</td>
-                    <td>${event.severity}</td>
-                    <td>${event.status}</td>
-                `;
-                eventList.appendChild(row);
-            });
-        }
-
-        // Call the function to populate the event list on page load
-        populateEvents();
-
-        // Quick action button functions (placeholders for now)
-        function addResident() {
-            alert("Chức năng Thêm Cư Dân sẽ được triển khai.");
-        }
-
-        function reportIncident() {
-            alert("Chức năng Báo Cáo Sự Cố sẽ được triển khai.");
-        }
-
-        function sendNotification() {
-            alert("Chức năng Gửi Thông Báo sẽ được triển khai.");
-        }
-    </script>
+   
 </body>
 </html>
 
