@@ -3,52 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản Lý Sự Cố và Báo Cáo</title>
+    <title>Quản Lý Thông Báo</title>
     <link rel="stylesheet" href="thongbao.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Top Menu -->
-        <nav class="top-menu">
-            <ul>
-                <li><a href="homepage.html">Trang Chủ</a></li>
-                <li><a href="nhanvien.html">Nhân Viên</a></li>
-                <li><a href="thietbi.html">Thiết Bị</a></li>
-                <li><a href="thongbao.html">Thông Báo</a></li>
-                <li><a href="index.html">Nâng Cao</a></li>
+    <!-- Header -->
+    <div class="header">
+        <h1>Quản Lý Thông Báo</h1>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav">
+        <a href="homepage.html">Trang Chủ</a>
+        <a href="nhanvien.html">Nhân Viên</a>
+        <a href="thietbi.html">Thiết Bị</a>
+        <a href="thongbao.html">Thông Báo</a>
+        <a href="index.html">Nâng Cao</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Notification Management -->
+        <div class="notifications-section">
+            <h2>Quản lý thông báo</h2>
+            
+            <!-- Add New Notification Form -->
+            <div class="form-section">
+                <form id="notification-form">
+                    <div class="form-group">
+                        <label for="notification">Thông Báo:</label>
+                        <input type="text" id="notification" name="notification" required>
+                    </div>
+                    <button type="submit" class="btn">Thêm Thông Báo</button>
+                </form>
+            </div>
+
+            <h2>Danh Sách Thông Báo</h2>
+            <ul id="notification-list">
+                <li>Thông báo 1: Hệ thống sẽ bảo trì vào 20/10/2024.</li>
+                <li>Thông báo 2: Cuộc họp cư dân sẽ diễn ra vào lúc 18h00 ngày 25/10/2024.</li>
+                <li>Thông báo 3: Khu phố sẽ tổ chức lễ hội vào ngày 01/11/2024.</li>
             </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Incident Management -->
-            <div class="management-section">
-                <h2>Quản Lý Sự Cố</h2>
-                <ul>
-                    <li>Ghi nhận các sự cố xảy ra.</li>
-                    <li>Phân loại sự cố theo mức độ nghiêm trọng.</li>
-                    <li>Gán sự cố cho người xử lý.</li>
-                    <li>Theo dõi quá trình xử lý sự cố.</li>
-                </ul>
-            </div>
-
-            <!-- Reporting Section -->
-            <div class="management-section">
-                <h2>Báo Cáo</h2>
-                <ul>
-                    <li>Báo cáo tình hình an ninh hàng ngày, hàng tuần.</li>
-                    <li>Báo cáo các sự cố đã xảy ra.</li>
-                    <li>Báo cáo tình trạng hoạt động của thiết bị.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <button class="quick-action" onclick="reportIncident()">Ghi Nhận Sự Cố</button>
-            <button class="quick-action" onclick="generateReport()">Tạo Báo Cáo</button>
-            <button class="quick-action" onclick="viewHistory()">Xem Lịch Sử</button>
         </div>
     </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Khu Phố. Mọi quyền được bảo lưu.</p>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and display notifications
+        const notificationForm = document.getElementById('notification-form');
+        const notificationList = document.getElementById('notification-list');
+
+        notificationForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu
+
+            const notificationInput = document.getElementById('notification');
+            const notificationText = notificationInput.value;
+
+            // Tạo một phần tử mới cho thông báo
+            const listItem = document.createElement('li');
+            listItem.textContent = notificationText;
+
+            // Thêm thông báo vào danh sách
+            notificationList.appendChild(listItem);
+
+            // Xóa nội dung của ô nhập
+            notificationInput.value = '';
+        });
+    </script>
 </body>
 </html>

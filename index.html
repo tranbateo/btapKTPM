@@ -7,65 +7,83 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Top Menu -->
-        <nav class="top-menu">
-            <ul>
-                <li><a href="homepage.html">Trang Chủ</a></li>
-                <li><a href="nhanvien.html">Nhân Viên</a></li>
-                <li><a href="thietbi.html">Thiết Bị</a></li>
-                <li><a href="thongbao.html">Thông Báo</a></li>
-                <li><a href="index.html">Nâng Cao</a></li>
-            </ul>
-        </nav>
+    <!-- Header -->
+    <header class="header">
+        <h1>Bảng Quản Lý Khu Phố</h1>
+        <p>Quản lý thông tin và sự kiện an ninh trong khu phố của bạn</p>
+    </header>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Overview Section -->
-            <div class="overview">
-                <div class="card">
-                    <h3>Tổng Số Hộ Gia Đình</h3>
-                    <p id="total-households">120</p>
-                </div>
-                <div class="card">
-                    <h3>Sự Cố An Ninh Tháng Này</h3>
-                    <p id="security-incidents">5</p>
-                </div>
-                <div class="card">
-                    <h3>Nhiệm Vụ Chờ Xử Lý</h3>
-                    <p id="pending-tasks">8</p>
-                </div>
+    <!-- Top Menu -->
+    <nav class="top-menu">
+        <ul>
+            <li><a href="homepage.html">Trang Chủ</a></li>
+            <li><a href="nhanvien.html">Nhân Viên</a></li>
+            <li><a href="thietbi.html">Thiết Bị</a></li>
+            <li><a href="thongbao.html">Thông Báo</a></li>
+            <li><a href="index.html">Nâng Cao</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Overview Section -->
+        <div class="overview">
+            <div class="card">
+                <h3>Tổng Số Hộ Gia Đình</h3>
+                <p id="total-households">120</p>
             </div>
-
-            <!-- Recent Security Events -->
-            <div class="events-section">
-                <h2>Sự Kiện An Ninh Gần Đây</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Sự Kiện</th>
-                            <th>Ngày</th>
-                            <th>Mức Độ</th>
-                            <th>Trạng Thái</th>
-                        </tr>
-                    </thead>
-                    <tbody id="event-list">
-                        <!-- Event rows will be populated here by JS -->
-                    </tbody>
-                </table>
+            <div class="card">
+                <h3>Sự Cố An Ninh Tháng Này</h3>
+                <p id="security-incidents">5</p>
+            </div>
+            <div class="card">
+                <h3>Nhiệm Vụ Chờ Xử Lý</h3>
+                <p id="pending-tasks">8</p>
             </div>
         </div>
 
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <button class="quick-action" onclick="addResident()">Thêm Cư Dân</button>
-            <button class="quick-action" onclick="reportIncident()">Báo Cáo Sự Cố</button>
-            <button class="quick-action" onclick="sendNotification()">Gửi Thông Báo</button>
+        <!-- Recent Security Events -->
+        <div class="events-section">
+            <h2>Sự Kiện An Ninh Gần Đây</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sự Kiện</th>
+                        <th>Ngày</th>
+                        <th>Mức Độ</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody id="event-list">
+                    <tr>
+                        <td>Trộm cắp</td>
+                        <td>10/10/2024</td>
+                        <td>Cao</td>
+                        <td>Đang xử lý</td>
+                    </tr>
+                    <tr>
+                        <td>Khói từ nhà bếp</td>
+                        <td>11/10/2024</td>
+                        <td>Thấp</td>
+                        <td>Đã giải quyết</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-   
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button class="quick-action" onclick="addResident()">Thêm Cư Dân</button>
+        <button class="quick-action" onclick="reportIncident()">Báo Cáo Sự Cố</button>
+        <button class="quick-action" onclick="sendNotification()">Gửi Thông Báo</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Khu Phố. Mọi quyền được bảo lưu.</p>
+        <p>Địa chỉ: Khu phố XYZ, Tỉnh ABC</p>
+        <p>Email: info@khu-pho.com | Điện thoại: 0123-456-789</p>
+    </footer>
 </body>
 </html>
-
-

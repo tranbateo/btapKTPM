@@ -3,52 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản Lý Thiết Bị và Camera</title>
+    <title>Quản Lý Thiết Bị - Khu Phố</title>
     <link rel="stylesheet" href="thietbi.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Top Menu -->
-        <nav class="top-menu">
-            <ul>
-                <li><a href="homepage.html">Trang Chủ</a></li>
-                <li><a href="nhanvien.html">Nhân Viên</a></li>
-                <li><a href="thietbi.html">Thiết Bị</a></li>
-                <li><a href="thongbao.html">Thông Báo</a></li>
-                <li><a href="index.html">Nâng Cao</a></li>
-            </ul>
-        </nav>
+    <!-- Header -->
+    <div class="header">
+        <h1>Quản Lý Thiết Bị</h1>
+    </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Camera Management -->
-            <div class="management-section">
-                <h2>Quản Lý Camera</h2>
-                <ul>
-                    <li>Thêm, sửa, xóa thông tin camera.</li>
-                    <li>Xem trực tiếp hình ảnh từ camera.</li>
-                    <li>Quản lý lịch ghi hình.</li>
-                    <li>Tìm kiếm đoạn ghi hình theo thời gian, sự kiện.</li>
-                </ul>
-            </div>
+    <!-- Navigation Menu -->
+    <div class="nav">
+        <a href="homepage.html">Trang Chủ</a>
+        <a href="nhanvien.html">Nhân Viên</a>
+        <a href="thietbi.html">Thiết Bị</a>
+        <a href="thongbao.html">Thông Báo</a>
+        <a href="index.html">Nâng cao</a>
+    </div>
 
-            <!-- Device Management -->
-            <div class="management-section">
-                <h2>Quản Lý Thiết Bị</h2>
-                <ul>
-                    <li>Quản lý các thiết bị an ninh khác như chuông báo động, cổng kiểm soát, hệ thống báo cháy.</li>
-                    <li>Theo dõi tình trạng hoạt động của thiết bị.</li>
-                    <li>Lập lịch bảo trì, sửa chữa.</li>
-                </ul>
-            </div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Device List -->
+        <div class="devices-list">
+            <h2>Danh Sách Thiết Bị</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên Thiết Bị</th>
+                        <th>Địa Chỉ</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody id="device-list">
+                    <tr>
+                        <td>Camera 1</td>
+                        <td>Đường A</td>
+                        <td>Hoạt động</td>
+                    </tr>
+                    <tr>
+                        <td>Chuông Báo Động</td>
+                        <td>Đường B</td>
+                        <td>Ngừng hoạt động</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <button class="quick-action" onclick="addCamera()">Thêm Camera</button>
-            <button class="quick-action" onclick="addDevice()">Thêm Thiết Bị</button>
-            <button class="quick-action" onclick="scheduleMaintenance()">Lập Lịch Bảo Trì</button>
+        <!-- Add New Device Form -->
+        <div class="form-section">
+            <h2>Thêm Thiết Bị Mới</h2>
+            <form id="add-device-form">
+                <div class="form-group">
+                    <label for="device-name">Tên Thiết Bị:</label>
+                    <input type="text" id="device-name" name="device-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="device-address">Địa Chỉ:</label>
+                    <input type="text" id="device-address" name="device-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="device-status">Trạng Thái:</label>
+                    <input type="text" id="device-status" name="device-status" required>
+                </div>
+                <button type="submit" class="btn">Thêm</button>
+            </form>
         </div>
     </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Khu Phố. Mọi quyền được bảo lưu.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('add-device-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn chặn việc gửi form
+
+            // Lấy giá trị từ các trường nhập liệu
+            const deviceName = document.getElementById('device-name').value;
+            const deviceAddress = document.getElementById('device-address').value;
+            const deviceStatus = document.getElementById('device-status').value;
+
+            // Tạo một hàng mới trong bảng thiết bị
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${deviceName}</td>
+                <td>${deviceAddress}</td>
+                <td>${deviceStatus}</td>
+            `;
+            document.getElementById('device-list').appendChild(newRow);
+
+            // Xóa giá trị nhập vào sau khi thêm
+            document.getElementById('add-device-form').reset();
+        });
+    </script>
 </body>
 </html>
