@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cư Dân - Khu Phố</title>
-    <link rel="stylesheet" href="cudan.css">
+    <link rel="stylesheet" href="nhanvien.css">
+    <script>
+        function addResident(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const status = document.getElementById('status').value;
+
+            if (name && address && status) {
+                const tableBody = document.querySelector('tbody');
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${name}</td>
+                    <td>${address}</td>
+                    <td>${status}</td>
+                `;
+                tableBody.appendChild(newRow);
+
+                // Clear form fields
+                document.getElementById('add-resident-form').reset();
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -36,17 +58,17 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Nguyễn Văn A</td>
+                        <td>Trần Bá Tài</td>
                         <td>123 Đường A</td>
                         <td>Đang cư trú</td>
                     </tr>
                     <tr>
-                        <td>Trần Thị B</td>
+                        <td>Nguyễn Nhân Phú</td>
                         <td>456 Đường B</td>
                         <td>Đang cư trú</td>
                     </tr>
                     <tr>
-                        <td>Lê Văn C</td>
+                        <td>Phạm Xuân Trường</td>
                         <td>789 Đường C</td>
                         <td>Đã chuyển đi</td>
                     </tr>
@@ -57,7 +79,7 @@
         <!-- Add New Resident Form -->
         <div class="form-section">
             <h2>Thêm Cư Dân Mới</h2>
-            <form id="add-resident-form">
+            <form id="add-resident-form" onsubmit="addResident(event)">
                 <div class="form-group">
                     <label for="name">Tên:</label>
                     <input type="text" id="name" name="name" required>
@@ -79,7 +101,5 @@
     <div class="footer">
         <p>&copy; 2024 Khu Phố. Mọi quyền được bảo lưu.</p>
     </div>
-
-    
 </body>
 </html>

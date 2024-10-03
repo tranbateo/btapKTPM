@@ -1,0 +1,101 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container */
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Top Menu */
+.top-menu {
+    background-color: #555;
+    padding: 10px 0;
+}
+
+.top-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.top-menu ul li {
+    margin: 0 15px;
+}
+
+.top-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 15px;
+}
+
+.top-menu ul li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Management Section */
+.management-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 48%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.management-section h2 {
+    margin-bottom: 15px;
+}
+
+.management-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.management-section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.quick-action {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.quick-action:hover {
+    background-color: #777;
+}

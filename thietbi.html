@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quản Lý Thiết Bị và Camera</title>
+    <link rel="stylesheet" href="thietbi.css">
 </head>
 <body>
-    
+    <div class="container">
+        <!-- Top Menu -->
+        <nav class="top-menu">
+            <ul>
+                <li><a href="homepage.html">Trang Chủ</a></li>
+                <li><a href="nhanvien.html">Nhân Viên</a></li>
+                <li><a href="thietbi.html">Thiết Bị</a></li>
+                <li><a href="thongbao.html">Thông Báo</a></li>
+                <li><a href="index.html">Nâng Cao</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Camera Management -->
+            <div class="management-section">
+                <h2>Quản Lý Camera</h2>
+                <ul>
+                    <li>Thêm, sửa, xóa thông tin camera.</li>
+                    <li>Xem trực tiếp hình ảnh từ camera.</li>
+                    <li>Quản lý lịch ghi hình.</li>
+                    <li>Tìm kiếm đoạn ghi hình theo thời gian, sự kiện.</li>
+                </ul>
+            </div>
+
+            <!-- Device Management -->
+            <div class="management-section">
+                <h2>Quản Lý Thiết Bị</h2>
+                <ul>
+                    <li>Quản lý các thiết bị an ninh khác như chuông báo động, cổng kiểm soát, hệ thống báo cháy.</li>
+                    <li>Theo dõi tình trạng hoạt động của thiết bị.</li>
+                    <li>Lập lịch bảo trì, sửa chữa.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button class="quick-action" onclick="addCamera()">Thêm Camera</button>
+            <button class="quick-action" onclick="addDevice()">Thêm Thiết Bị</button>
+            <button class="quick-action" onclick="scheduleMaintenance()">Lập Lịch Bảo Trì</button>
+        </div>
+    </div>
 </body>
 </html>
