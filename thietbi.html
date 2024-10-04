@@ -12,13 +12,12 @@
         <h1>Quản Lý Thiết Bị</h1>
     </div>
 
-    <!-- Navigation Menu -->
-    <div class="nav">
+     <!-- Navigation Menu -->
+     <div class="nav">
         <a href="homepage.html">Trang Chủ</a>
         <a href="nhanvien.html">Nhân Viên</a>
         <a href="thietbi.html">Thiết Bị</a>
-        <a href="thongbao.html">Thông Báo</a>
-        <a href="index.html">Nâng cao</a>
+        <a href="taichinh.html">Tài chính</a>
     </div>
 
     <!-- Main Content -->
@@ -58,7 +57,7 @@
                     <input type="text" id="device-name" name="device-name" required>
                 </div>
                 <div class="form-group">
-                    <label for="device-address">Địa Chỉ:</label>
+                    <label for="device-address">Vị trí:</label>
                     <input type="text" id="device-address" name="device-address" required>
                 </div>
                 <div class="form-group">
@@ -67,6 +66,14 @@
                 </div>
                 <button type="submit" class="btn">Thêm</button>
             </form>
+        </div>
+
+        <!-- Device Statistics Section -->
+        <div class="statistics">
+            <h2>Thống Kê Thiết Bị</h2>
+            <p>Tổng số thiết bị: <span id="total-devices">2</span></p>
+            <p>Thiết bị hoạt động: <span id="active-devices">1</span></p>
+            <p>Thiết bị không hoạt động: <span id="inactive-devices">1</span></p>
         </div>
     </div>
 
@@ -94,9 +101,33 @@
             `;
             document.getElementById('device-list').appendChild(newRow);
 
+            // Cập nhật thống kê thiết bị
+            updateStatistics();
+
             // Xóa giá trị nhập vào sau khi thêm
             document.getElementById('add-device-form').reset();
         });
+
+        function updateStatistics() {
+            const rows = document.querySelectorAll('#device-list tr');
+            const totalDevices = rows.length;
+            let activeDevices = 0;
+            let inactiveDevices = 0;
+
+            rows.forEach(row => {
+                const status = row.cells[2].textContent;
+                if (status.toLowerCase() === 'hoạt động') {
+                    activeDevices++;
+                } else {
+                    inactiveDevices++;
+                }
+            });
+
+            // Cập nhật số liệu thống kê
+            document.getElementById('total-devices').textContent = totalDevices;
+            document.getElementById('active-devices').textContent = activeDevices;
+            document.getElementById('inactive-devices').textContent = inactiveDevices;
+        }
     </script>
 </body>
 </html>

@@ -6,41 +6,70 @@
     <title>Trang Chủ - Khu Phố</title>
     <link rel="stylesheet" href="homepage.css">
 </head>
-<body>
+<body style="background-image: url('images/background.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <!-- Header -->
     <div class="header">
         <h1>Chào Mừng Đến Khu Phố</h1>
     </div>
 
-    <!-- Navigation Menu -->
-    <div class="nav">
-        <a href="homepage.html">Trang Chủ</a>
-        <a href="nhanvien.html">Nhân Viên</a>
-        <a href="thietbi.html">Thiết Bị</a>
-        <a href="thongbao.html">Thông Báo</a>
-        <a href="index.html">Nâng cao</a>
-    </div>
+        <!-- Navigation Menu -->
+        <div class="nav">
+            <a href="homepage.html">Trang Chủ</a>
+            <a href="nhanvien.html">Nhân Viên</a>
+            <a href="thietbi.html">Thiết Bị</a>
+            <a href="taichinh.html">Tài chính</a>
+        </div>
+    
+
 
     <!-- Main Content -->
     <div class="main-content">
+        <!-- Phần giới thiệu -->
         <div class="intro">
             <h2>Giới Thiệu</h2>
             <p>Chào mừng bạn đến với khu phố của chúng tôi! Tại đây, chúng tôi luôn đảm bảo sự an toàn và tiện nghi cho mọi cư dân.</p>
+            <img src="khu_pho.jpg" alt="Hình ảnh khu phố" style="width:100%; max-width:6100%; margin-top:20px;">
         </div>
         
-        <div class="features">
-            <h3>Dịch Vụ Nổi Bật</h3>
-            <ul>
-                <li><strong>Quản lý cư dân chuyên nghiệp:</strong> Đội ngũ chuyên viên hỗ trợ và quản lý cư dân 24/7.</li>
-                <li><strong>An ninh 24/7:</strong> Hệ thống camera giám sát và đội bảo vệ luôn sẵn sàng.</li>
-                <li><strong>Các sự kiện cộng đồng thường xuyên:</strong> Tổ chức các hoạt động giao lưu, văn hóa giúp gắn kết cư dân.</li>
-            </ul>
+   
+        <!-- Thông Báo -->
+        <div class="notification-section">
+            <h3>Nội dung khẩn cấp</h3>
+            <div class="notification-box" id="notification1">
+                <p>Thông Báo Khẩn Cấp: Mất Điện Tạm Thời</p>
+                <p>"Khu vực chúng ta sẽ bị cắt điện từ 14h00 đến 18h00 ngày hôm nay để bảo trì hệ thống. Đề nghị quý cư dân chuẩn bị đèn pin, nạp đầy pin cho các thiết bị điện tử và hạn chế sử dụng thang máy. Xin cảm ơn sự thông cảm của quý cư dân."</p>
+            </div>
+            <div class="notification-box" id="notification2">
+                <p>Cảnh Báo: Cảnh Báo Lũ Lụt</p>
+                <p>"Do tình hình mưa lớn kéo dài, khả năng ngập lụt tại một số tuyến đường trong khu vực là rất cao. Đề nghị quý cư dân hạn chế ra ngoài nếu không cần thiết và di chuyển xe lên các tầng cao để tránh thiệt hại."</p>
+            </div>
+            <div class="notification-box" id="notification3">
+                <p>Khẩn Cấp: Sự Cố Rò Rỉ Gas</p>
+                <p>"Hiện có sự cố rò rỉ gas tại tòa nhà B. Chúng tôi khuyến nghị cư dân không sử dụng bất kỳ thiết bị điện nào, mở cửa sổ để thông thoáng và di chuyển ra khỏi khu vực bị ảnh hưởng ngay lập tức. Đội cứu hộ đang trên đường tới."</p>
+            </div>
+            <div class="notification-box" id="notification4">
+                <p>Thông Báo Khẩn: Cảnh Báo An Ninh</p>
+                <p>"Có dấu hiệu kẻ gian đột nhập trong khu vực vào rạng sáng nay. Đề nghị quý cư dân kiểm tra khóa cửa, hệ thống camera an ninh và liên hệ bảo vệ nếu thấy bất kỳ hoạt động đáng ngờ nào. Vui lòng không mở cửa cho người lạ."</p>
+            </div>
         </div>
+
+         <!-- Các dịch vụ nổi bật -->
+     <div class="features">
+        <h3>Dịch Vụ Nổi Bật</h3>
+        <ul>
+            <li><strong>Quản lý cư dân chuyên nghiệp:</strong> Đội ngũ chuyên viên hỗ trợ và quản lý cư dân 24/7.</li>
+            <li><strong>An ninh 24/7:</strong> Hệ thống camera giám sát và đội bảo vệ luôn sẵn sàng.</li>
+            <li><strong>Các sự kiện cộng đồng thường xuyên:</strong> Tổ chức các hoạt động giao lưu, văn hóa giúp gắn kết cư dân.</li>
+        </ul>
     </div>
 
+    </div>
+    
     <!-- Footer -->
     <div class="footer">
         <p>&copy; 2024 Khu Phố. Mọi quyền được bảo lưu.</p>
     </div>
+
+    <script src="homepage.js"></script>
 </body>
 </html>

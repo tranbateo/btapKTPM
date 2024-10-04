@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Thu Chi - Tổ Dân Phố</title>
+    <link rel="stylesheet" href="taichinh.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Báo Cáo Thu Chi Tổ Dân Phố</h1>
+    </div>
+
+     <!-- Navigation Menu -->
+     <div class="nav">
+        <a href="homepage.html">Trang Chủ</a>
+        <a href="nhanvien.html">Nhân Viên</a>
+        <a href="thietbi.html">Thiết Bị</a>
+        <a href="taichinh.html">Tài chính</a>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="report-section">
+            <h2>Báo Cáo Thu Chi</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Loại</th>
+                        <th>Số Tiền</th>
+                        <th>Mô Tả</th>
+                    </tr>
+                </thead>
+                <tbody id="report-list">
+                    <!-- Dữ liệu báo cáo sẽ được thêm vào đây -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add New Entry Form -->
+        <div class="form-section">
+            <h2>Thêm Mục Thu Chi Mới</h2>
+            <form id="add-report-form">
+                <div class="form-group">
+                    <label for="date">Ngày:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Loại:</label>
+                    <select id="type" name="type" required>
+                        <option value="Thu">Thu</option>
+                        <option value="Chi">Chi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Số Tiền:</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Mô Tả:</label>
+                    <input type="text" id="description" name="description" required>
+                </div>
+                <button type="submit" class="btn">Thêm</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Tổ Dân Phố. Mọi quyền được bảo lưu.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="taichinh.js"></script>
+</body>
+</html>

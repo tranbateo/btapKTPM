@@ -34,20 +34,20 @@
         <h1>Danh Sách Nhân Viên</h1>
     </div>
 
-    <!-- Navigation Menu -->
-    <div class="nav">
+      <!-- Navigation Menu -->
+      <div class="nav">
         <a href="homepage.html">Trang Chủ</a>
         <a href="nhanvien.html">Nhân Viên</a>
         <a href="thietbi.html">Thiết Bị</a>
-        <a href="thongbao.html">Thông Báo</a>
-        <a href="index.html">Nâng cao</a>
+        <a href="taichinh.html">Tài chính</a>
     </div>
+
 
     <!-- Main Content -->
     <div class="main-content">
         <!-- Residents List -->
         <div class="residents-list">
-            <h2>Danh Sách Bảo Vệ</h2>
+            <h2>Danh sách hộ dân</h2>
             <table>
                 <thead>
                     <tr>
@@ -76,9 +76,40 @@
             </table>
         </div>
 
+        <!-- Quản Lý và Tổ Trưởng -->
+        <div class="management-list">
+            <h2>Danh Sách Quản Lý và Tổ Trưởng</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên</th>
+                        <th>Chức Vụ</th>
+                        <th>Liên Hệ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nguyễn Văn A</td>
+                        <td>Quản Lý</td>
+                        <td>0912345678</td>
+                    </tr>
+                    <tr>
+                        <td>Trần Thị B</td>
+                        <td>Tổ Trưởng</td>
+                        <td>0987654321</td>
+                    </tr>
+                    <tr>
+                        <td>Phạm Văn C</td>
+                        <td>Quản Lý</td>
+                        <td>0123456789</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <!-- Add New Resident Form -->
         <div class="form-section">
-            <h2>Thêm Cư Dân Mới</h2>
+            <h2>Thêm Hộ Dân Mới</h2>
             <form id="add-resident-form" onsubmit="addResident(event)">
                 <div class="form-group">
                     <label for="name">Tên:</label>
